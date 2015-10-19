@@ -1,0 +1,45 @@
+
+Register Reg0 ~ Reg9 (L, H, LL, LH, HL, HH ending for byte/word access)
+         CmpRet system read-only
+Data .data 0 [...]
+Fill .fill 0 12324 for empty(0x00) data space with specified size (12324 bytes)
+Label Label:
+Offset @1234, @Reg0
+Constant 1234
+Address offset, constant
+Src/Dest
+	- register
+	- Offset
+	- Constant (not applicable for Dest)
+	- Label
+
+[Op Dest Src]
+
+Nop
+Mov [Dest] [Src]
+Add [Dest] [Src]
+Sub [Dest] [Src]
+Mul [Dest] [Src]
+Div [Dest] [Src]
+Mod [Dest] [Src]
+And [Dest] [Src]
+Or [Dest] [Src]
+Xor [Dest] [Src]
+ShiftL(SHL) [Dest] [Src]
+ShiftR(SHR) [Dest] [Src]
+Inc [Dest]
+Dec [Dest]
+Pop [Dest]
+Push [Dest]
+PopAll
+PushAll
+Cmp [Dest] [Src] -> less: -1, equal: 0, more: 1 stored to read-only? register
+Jmp [Src]
+JmpIfLess(JL) [Src]
+JmpIfAbove(JA) [Src]
+JmpIfEqual(JE) [Src]
+JmpIfNotEqual(JNE) [Src]
+JmpIfAboveOrEqual(JAE) [Src]
+JmpIfLessOfEqual(JLE) [Src]
+Call [Src]
+Ret

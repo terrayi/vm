@@ -1,0 +1,81 @@
+
+#ifndef _COMPILER_ENUMS_H
+#define _COMPILER_ENUMS_H
+
+namespace VM {
+
+enum ArgumentTypeEnum
+{
+	REGISTER,
+	REGISTER_OFFSET,
+	CONSTANT,
+	CONSTANT_OFFSET,
+	LABEL,
+	LABEL_OFFSET
+};
+
+enum RegisterTypeEnum
+{
+	REG_WHOLE,
+	REG_L,
+	REG_H,
+	REG_LL,
+	REG_LH,
+	REG_HL,
+	REG_HH
+};
+
+enum CodeEnum
+{
+	NOP,
+	MOV,
+	ADD,
+	SUB,
+	MUL,
+	DIV,
+	MOD,
+	AND,
+	OR,
+	XOR,
+	SHL,
+	SHR,
+	INC,
+	DEC,
+	POP,
+	PUSH,
+	POPA,
+	PUSHA,
+	CMP,
+	JMP,
+	JL,
+	JA,
+	JE,
+	JNE,
+	JAE,
+	JLE,
+	CALL,
+	RET,
+	DATA,
+	FILL
+};
+
+enum ReturnValue
+{
+	EXCEPTION = -1,
+	COMPILER_OK = 0,
+	LOAD_OPEN_ERROR,
+	LOAD_READ_ERROR,
+	LOAD_TELL_ERROR,
+	LOAD_SEEK_ERROR,
+	LOAD_INVALID_FILE,
+	CONVERT_ERROR,
+	WRITE_OPEN_ERROR,
+	WRITE_WRITE_ERROR,
+	UNKNOWN_ERROR
+};
+
+}; //namespace VM
+
+#endif
+
+//EOF
